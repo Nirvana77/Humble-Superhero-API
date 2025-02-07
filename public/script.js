@@ -37,6 +37,8 @@ form.addEventListener("submit", async (event) => {
 
 	// Clear the form and reload the list
 	form.reset();
+
+	// Fetch the updated list of superheroes
 	fetchSuperheroes();
 });
 

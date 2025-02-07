@@ -50,12 +50,14 @@ export class SuperheroesController {
 		}
 	}
 
+	// Reset the list of superheroes (for testing purposes)
 	resetSuperheroes() {
 		this.superheroes = [];
 		this.saveSuperheroes();
 	}
 
 	// POST: Add a new superhero
+	// TODO: Add a unique identifier to each superhero to allow for updates and deletions
 	@Post()
 	addSuperhero(@Body() superhero: Superhero) {
 		const { name, superpower, humilityScore } = superhero;
@@ -71,8 +73,9 @@ export class SuperheroesController {
 	}
 
 	// GET: Fetch the list of superheroes sorted by humility score
+	// TODO: Add a query parameter to sort by name or superpower
 	@Get()
 	getSuperheroes() {
-		return this.superheroes.sort((a, b) => b.humilityScore - a.humilityScore);
+		return this.superheroes;
 	}
 }
