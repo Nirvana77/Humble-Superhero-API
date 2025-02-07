@@ -1,14 +1,14 @@
 # How I'd collaborate with a teammate to improve or expand this task
 
-I would collaborate with a teammate by discussing the requirements of the task and breaking it down into smaller tasks. We would then assign each task to a team member based on their skills and experience. We would also set up regular meetings to discuss the progress of the project and address any issues or roadblocks that arise. We would also review each other's code and provide feedback to ensure that the code is of high quality and follows best practices. We would also work together to test the application and fix any bugs or issues that arise. Overall, I believe that collaboration is key to the success of any project, and I would work closely with my teammate to ensure that we deliver a high-quality product that meets the requirements of the task.
+I would collaborate with a teammate by discussing the requirements of the task/project and breaking it down into smaller tasks. We would then assign each task to a team member based on their skills, experience and passion. We would also set up regular meetings to discuss the progress of the project and address any issues or roadblocks that arise (I think this is important especially when working fully remote). We would also review each other's code and provide feedback to ensure that the code is of high quality and follows best practices. We would also work together to test the application and fix any bugs or issues that arise. Overall, I believe that collaboration is key to the success of any project, and I would work closely with my teammate to ensure that we deliver a high-quality product that meets the requirements of the task.
 
 # If I had more time
 
-I would like to add a pagination feature to the listing of the superheroes. This would allow the user to see a limited number of superheroes at a time and navigate through the list using the pagination buttons. This would make the application more user-friendly, improve the performance of the application, and make the application more scalable.
-
-I would also like to add a search feature to the application. This would allow the user to search for a specific superhero by name or superpower (or any other attribute). This would make it easier for the user to find the superhero they are looking for. This would also be fun to implement and would improve my skills as a developer.
+I would like to add a pagination feature to the listing of the superheroes. This would allow the user to see a limited number of superheroes at a time and navigate through the list using the pagination buttons. This would make the application more user-friendly, improve the performance of the application, and make the application more scalable. Plus, it would be a fun feature to implement and would improve my skills.
 
 I would also like to add a unique identifier to each superhero in the database or structure. This would make it easier to identify and manage each superhero in the application. This would also make it easier to implement features like updating or deleting one or more superheroes.
+
+I would also like to add a search feature to the application. This would allow the user to search for a specific superhero by name or superpower (or any other attribute). This would make it easier for the user to find the superhero they are looking for. This would also be fun to implement and would improve my skills as a developer.
 
 ## Superhero API Task
 
