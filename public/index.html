@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Humble Superheroes</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<h1>Humble Superheroes</h1>
+
+		<form id="superhero-form">
+			<label for="name">Name:</label>
+			<input type="text" id="name" required />
+			<label for="superpower">Superpower:</label>
+			<input type="text" id="superpower" required />
+			<label for="humilityScore">Humility Score (1-10):</label>
+			<input type="number" id="humilityScore" min="1" max="10" required />
+			<button type="submit">Add Superhero</button>
+			<button type="reset">Clear</button>
+			<button type="button" onclick="fetchSuperheroes()">Refresh List</button>
+		</form>
+
+		<h2>Superhero List</h2>
+		<ul id="superhero-list"></ul>
+
+		<!-- import the JavaScript file -->
+		<script src="script.js"></script>
+	</body>
+</html>
