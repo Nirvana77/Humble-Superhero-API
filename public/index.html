@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Humble Superheroes</title>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				padding: 20px;
+			}
+			h1 {
+				color: #333;
+			}
+			form {
+				margin-bottom: 20px;
+			}
+			input,
+			button {
+				padding: 10px;
+				margin: 5px;
+			}
+			ul {
+				list-style-type: none;
+				padding: 0;
+			}
+			li {
+				padding: 8px;
+				border: 1px solid #ddd;
+				margin-bottom: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Humble Superheroes</h1>
+
+		<form id="superhero-form">
+			<label for="name">Name:</label>
+			<input type="text" id="name" required />
+			<label for="superpower">Superpower:</label>
+			<input type="text" id="superpower" required />
+			<label for="humilityScore">Humility Score (1-10):</label>
+			<input type="number" id="humilityScore" min="1" max="10" required />
+			<button type="submit">Add Superhero</button>
+			<button type="reset">Clear</button>
+			<button type="button" onclick="fetchSuperheroes()">Refresh List</button>
+		</form>
+
+		<h2>Superhero List</h2>
+		<ul id="superhero-list"></ul>
+
+		<script>
+			const form = document.getElementById("superhero-form");
+			const superheroList = document.getElementById("superhero-list");
+
+			// Fetch existing superheroes on page load
+			async function fetchSuperheroes() {
+				const response = await fetch("/superheroes");
+				const heroes = await response.json();
+				displaySuperheroes(heroes);
+			}
+
+			// Display superheroes in the list
+			function displaySuperheroes(heroes) {
+				superheroList.innerHTML = "";
+				heroes.forEach((hero) => {
+					const li = document.createElement("li");
+					li.textContent = `${hero.name} (Superpower: ${hero.superpower}, Humility: ${hero.humilityScore})`;
+					superheroList.appendChild(li);
+				});
+			}
+
+			// Handle form submission
+			form.addEventListener("submit", async (event) => {
+				event.preventDefault();
+
+				const name = document.getElementById("name").value;
+				const superpower = document.getElementById("superpower").value;
+				const humilityScore = document.getElementById("humilityScore").value;
+
+				const newHero = { name, superpower, humilityScore: Number(humilityScore) };
+
+				// Send POST request to add the superhero
+				await fetch("/superheroes", {
+					method: "POST",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify(newHero)
+				});
+
+				// Clear the form and reload the list
+				form.reset();
+				fetchSuperheroes();
+			});
+
+			// Initial fetch of superheroes
+			fetchSuperheroes();
+		</script>
+	</body>
+</html>
